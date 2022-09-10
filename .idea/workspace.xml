@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71d7fac6-2faa-4e1e-a703-48a100857538" name="Changes" comment=".map() function added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PersonDTO.java" afterDir="false" />
+    <list default="true" id="71d7fac6-2faa-4e1e-a703-48a100857538" name="Changes" comment="code fix">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ApplePredicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/appleColorPredicate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/appleWeightPredicate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TestDAO.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -76,6 +81,8 @@
       <workItem from="1662319314352" duration="2856000" />
       <workItem from="1662399324129" duration="1051000" />
       <workItem from="1662487032737" duration="3532000" />
+      <workItem from="1662658204257" duration="3438000" />
+      <workItem from="1662796743308" duration="5836000" />
     </task>
     <task id="LOCAL-00001" summary=".map() function added">
       <created>1662322294594</created>
@@ -110,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value=".map() function added" />
-    <option name="LAST_COMMIT_MESSAGE" value=".map() function added" />
+    <MESSAGE value="code fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="code fix" />
   </component>
 </project>
