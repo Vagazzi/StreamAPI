@@ -1,8 +1,14 @@
 package org.example;
+import com.sun.source.doctree.SummaryTree;
+
 import java.io.InputStream;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.*;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.summarizingInt;
+import static java.util.stream.Collectors.summingInt;
 
 
 public class Main {
@@ -18,8 +24,22 @@ public class Main {
         appleBag.add(new Apple("green",1010));
         appleBag.add(new Apple("yellow",32));
 
-        Apple.filterApples(appleBag, new appleColorPredicate());
 
+        long filterCondition = appleBag.stream().filter(x->x.getWeight()>150).count();
+
+        int totalWeight = appleBag.stream().mapToInt(Apple::getWeight).sum();
+
+        IntSummaryStatistics statistics = appleBag.stream().collect(summarizingInt(Apple::getWeight));
+
+        System.out.println(statistics);
+
+        System.out.println(filterCondition);
+
+        System.out.println(totalWeight);
+
+        appleBag = Apple.filterApples(appleBag, new appleColorPredicate());
+
+        //Apple.filterApples(appleBag, new appleWeightPredicate());
         appleBag.forEach(System.out::println);
 
     }
@@ -59,12 +79,6 @@ public class Main {
 
     }
     public static ArrayList<Apple> appleFilter(ArrayList<Apple> apples){
-
-        apples.add(new Apple("green",322));
-        apples.add(new Apple("yellow",100));
-        apples.add(new Apple("red",423));
-        apples.add(new Apple("green",1010));
-        apples.add(new Apple("yellow",32));
 
         apples = (ArrayList<Apple>) apples.stream()
                 .filter(x->x.getWeight()>125).filter(x-> Objects.equals(x.getColor(), "green")).collect(Collectors.toList());
