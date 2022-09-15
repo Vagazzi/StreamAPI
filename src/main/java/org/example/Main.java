@@ -1,20 +1,35 @@
 package org.example;
-import com.sun.source.doctree.SummaryTree;
+import org.openjdk.jmh.annotations.*;
 
-import java.io.InputStream;
 import java.util.*;
-import java.util.function.Consumer;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.*;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.summarizingInt;
-import static java.util.stream.Collectors.summingInt;
 
-
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@Fork(value = 2, jvmArgs = {"-Xms4G","-Xmx4G"})
+@State(Scope.Benchmark)
 public class Main {
+
+    private static final Long N = 10_000_000L;
+    @Benchmark
+    public static Long seqSum(){
+        return Stream.iterate(1L,i->i+1).limit(N).reduce(0L,Long::sum);
+    }
+
+    @TearDown(Level.Invocation)
+    public void tearDown(){
+        System.gc();
+    }
+
     public static void main(String[] args) {
         //callIntStream();
         //peopleFilter();
+
+        Long res = seqSum();
 
         ArrayList<Apple> appleBag = new ArrayList<>();
 
@@ -31,16 +46,16 @@ public class Main {
 
         IntSummaryStatistics statistics = appleBag.stream().collect(summarizingInt(Apple::getWeight));
 
-        System.out.println(statistics);
+        //System.out.println(statistics);
 
-        System.out.println(filterCondition);
+        //System.out.println(filterCondition);
 
-        System.out.println(totalWeight);
+        //System.out.println(totalWeight);
 
-        appleBag = Apple.filterApples(appleBag, new appleColorPredicate());
+        //appleBag = Apple.filterApples(appleBag, new appleColorPredicate());
 
         //Apple.filterApples(appleBag, new appleWeightPredicate());
-        appleBag.forEach(System.out::println);
+        //appleBag.forEach(System.out::println);
 
     }
 
