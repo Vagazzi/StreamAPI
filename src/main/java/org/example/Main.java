@@ -26,12 +26,20 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //callIntStream();
-        //peopleFilter();
-
-        Long res = seqSum();
+        callIntStream();
+        peopleFilter();
 
         ArrayList<Apple> appleBag = new ArrayList<>();
+
+        List<Integer> numbers = List.of(1,2,3,4,5,6,7,8,9,10);
+
+        int result = numbers.stream().reduce(0, Integer::sum);
+
+        System.out.println("Element sum is " + result);
+
+        Long anotherRes = Long.valueOf(numbers.stream().filter(x->x>=5).map(x->x*x).reduce(1,(a, b)->a*b));
+
+        System.out.println("Multiplication res is " + anotherRes);
 
         appleBag.add(new Apple("green",322));
         appleBag.add(new Apple("yellow",100));
@@ -40,22 +48,24 @@ public class Main {
         appleBag.add(new Apple("yellow",32));
 
 
+
         long filterCondition = appleBag.stream().filter(x->x.getWeight()>150).count();
 
         int totalWeight = appleBag.stream().mapToInt(Apple::getWeight).sum();
 
         IntSummaryStatistics statistics = appleBag.stream().collect(summarizingInt(Apple::getWeight));
 
-        //System.out.println(statistics);
+        System.out.println(statistics);
 
-        //System.out.println(filterCondition);
+        System.out.println(filterCondition);
 
-        //System.out.println(totalWeight);
+        System.out.println(totalWeight);
 
-        //appleBag = Apple.filterApples(appleBag, new appleColorPredicate());
+        appleBag = Apple.filterApples(appleBag, new appleColorPredicate());
 
-        //Apple.filterApples(appleBag, new appleWeightPredicate());
-        //appleBag.forEach(System.out::println);
+        Apple.filterApples(appleBag, new appleWeightPredicate());
+        appleBag.forEach(System.out::println);
+
 
     }
 

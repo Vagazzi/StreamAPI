@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="71d7fac6-2faa-4e1e-a703-48a100857538" name="Changes" comment="collectors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +80,7 @@
       <workItem from="1662796743308" duration="7069000" />
       <workItem from="1663094284761" duration="2718000" />
       <workItem from="1663262149291" duration="1948000" />
+      <workItem from="1663403158651" duration="1241000" />
     </task>
     <task id="LOCAL-00001" summary=".map() function added">
       <created>1662322294594</created>
